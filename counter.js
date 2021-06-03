@@ -24,7 +24,7 @@ function srvTime() {
     xmlHttp.setRequestHeader("Content-Type", "text/html"); 
     xmlHttp.send(''); 
       var st1 = xmlHttp.getResponseHeader("Date");
-      alert(st1);
+     // alert(st1);
 
     return xmlHttp.getResponseHeader("Date");
 }
