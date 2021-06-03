@@ -36,7 +36,7 @@ function srvTime() {
             }
         }
     }
-    xmlHttp.open('HEAD', window.location.href.toString(), false);
+    xmlHttp.open('GET', window.location.href.toString(), false);
     xmlHttp.setRequestHeader("Content-Type", "text/html");
     xmlHttp.send('');
     return xmlHttp.getResponseHeader("Date");
