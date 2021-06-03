@@ -43,8 +43,8 @@ function CountDownTimer(dt, id) {
     function showRemaining() {
         /*var now = new Date(),
             distance = end - now;*/
-        
-        var st = srvTime();
+        var st;
+        st = srvTime();
         var date = new Date(st);
         distance = end - date;
         // 시간 종료 시 뜨는 문구
