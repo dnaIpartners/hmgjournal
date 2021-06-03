@@ -23,11 +23,15 @@ function srvTime() {
     xmlHttp.open('HEAD',window.location.href.toString(),false);
     xmlHttp.setRequestHeader("Content-Type", "text/html"); 
     xmlHttp.send(''); 
+      var st1 = xmlHttp.getResponseHeader("Date");
+      alert(st1);
   }else if (window.ActiveXObject) { 
     xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
     xmlHttp.open('HEAD',window.location.href.toString(),false);
     xmlHttp.setRequestHeader("Content-Type", "text/html"); 
     xmlHttp.send(''); 
+       var st2 = xmlHttp.getResponseHeader("Date");
+      alert(st2);
   } 
     return xmlHttp.getResponseHeader("Date");
 }
@@ -62,7 +66,7 @@ function CountDownTimer(dt, id) {
         document.getElementById(id).innerHTML = '<div class="unit-wrap"><strong>' + addZeros(hours + days, 2) + '</strong> <span class="unit">Hours</span></div>';
         document.getElementById(id).innerHTML += '<div class="unit-wrap"><strong>' + addZeros(minutes, 2) + '</strong> <span class="unit">Minutes</span></div>';
         document.getElementById(id).innerHTML += '<div class="unit-wrap"><strong>' + addZeros(seconds, 2) + '</strong> <span class="unit">Seconds</span></div>';
-        st ='';
+       
     
     }
 
