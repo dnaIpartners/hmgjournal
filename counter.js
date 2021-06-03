@@ -58,7 +58,7 @@ function CountDownTimer(dt, id) {
             hours = Math.floor((distance % _day) / _hour), 
             minutes = Math.floor((distance % _hour) / _minute), 
             seconds = Math.floor((distance % _minute) / _second);
-
+         alert(seconds);
         //document.getElementById(id).innerHTML = days + '일 ';
         document.getElementById(id).innerHTML = '<div class="unit-wrap"><strong>' + addZeros(hours + days, 2) + '</strong> <span class="unit">Hours</span></div>';
         document.getElementById(id).innerHTML += '<div class="unit-wrap"><strong>' + addZeros(minutes, 2) + '</strong> <span class="unit">Minutes</span></div>';
