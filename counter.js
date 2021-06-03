@@ -18,28 +18,17 @@ window.onload = function () {
 
 function srvTime() {
     var xmlHttp;
-    try {
-        //FF, Opera, Safari, Chrome
-        xmlHttp = new XMLHttpRequest();
-    }
-    catch (err1) {
-        //IE
-        try {
-            xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
-        }
-        catch (err2) {
-            try {
-                xmlHttp = new ActiveXObject('Microsoft.XMLHTTP');
-            }
-            catch (eerr3) {
-                //AJAX not supported, use CPU time.
-                alert("AJAX not supported");
-            }
-        }
-    }
-    xmlHttp.open('GET', window.location.href.toString(), false);
-    xmlHttp.setRequestHeader("Content-Type", "text/html");
-    xmlHttp.send('');
+  if (window.XMLHttpRequest) { // IE 7.0 이상, 크롬, 파이어폭스일 경우 분기 
+    xmlHttp = new XMLHttpRequest(); 
+    xmlHttp.open('HEAD',window.location.href.toString(),false);
+    xmlHttp.setRequestHeader("Content-Type", "text/html"); 
+    xmlHttp.send(''); 
+  }else if (window.ActiveXObject) { 
+    xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
+    xmlHttp.open('HEAD',window.location.href.toString(),false);
+    xmlHttp.setRequestHeader("Content-Type", "text/html"); 
+    xmlHttp.send(''); 
+  } 
     return xmlHttp.getResponseHeader("Date");
 }
 
