@@ -25,14 +25,7 @@ function srvTime() {
     xmlHttp.send(''); 
       var st1 = xmlHttp.getResponseHeader("Date");
       alert(st1);
-  }else if (window.ActiveXObject) { 
-    xmlHttp = new ActiveXObject('Msxml2.XMLHTTP');
-    xmlHttp.open('HEAD',window.location.href.toString(),false);
-    xmlHttp.setRequestHeader("Content-Type", "text/html"); 
-    xmlHttp.send(''); 
-       var st2 = xmlHttp.getResponseHeader("Date");
-      alert(st2);
-  } 
+
     return xmlHttp.getResponseHeader("Date");
 }
 
