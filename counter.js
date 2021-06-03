@@ -15,8 +15,9 @@ window.onload = function () {
 
 
 //서버 시간 가져온다
-var xmlHttp;
+
 function srvTime() {
+    var xmlHttp;
     try {
         //FF, Opera, Safari, Chrome
         xmlHttp = new XMLHttpRequest();
